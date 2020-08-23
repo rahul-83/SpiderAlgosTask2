@@ -1,0 +1,25 @@
+def maxbalancedprefix(str, n):
+    _sum = 0
+    maxi = 0
+
+    for i in range(n):
+
+        if str[i] == '<':
+            _sum += 1
+
+        else:
+            _sum -= 1
+
+        if _sum < 0:
+            break
+
+        if _sum == 0:
+            maxi = i + 1
+    return maxi
+
+str = input()
+n = len(str)
+if(len(str)%2==1):
+    print("0")
+else:
+    print(maxbalancedprefix(str, n))
